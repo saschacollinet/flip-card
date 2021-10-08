@@ -1,6 +1,7 @@
 import FlipCardHover from "../FlipCardHover/FlipCardHover";
 import FlipCardClick from "../FlipCardClick/FlipCardClick";
-import FlipCardClickWith3D from "../FlipCardClickWith3D/FlipCardClickWith3D";
+import FlipCardClickWithAnimatedText from "../FlipCardClickWithAnimatedText/FlipCardClickWithAnimatedText";
+import Breathe from "../Breathe/Breathe";
 
 function App() {
   return (
@@ -14,9 +15,13 @@ function App() {
       <br />
       <FlipCardClick />
       <br />
-      <h2>Flip Card Click With 3D</h2>
+      <h2>Flip Card Click With Animated Text</h2>
       <br />
-      <FlipCardClickWith3D />
+      <FlipCardClickWithAnimatedText />
+      <br />
+      <h2>Animated Circle</h2>
+      <br />
+      <Breathe />
       <br />
     </main>
   );

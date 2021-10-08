@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { useState } from "react";
 
-function FlipCardClickWith3D() {
+function FlipCardClickWithAnimatedText() {
   const [isCardFlipped, setIsCardFlipped] = useState(false);
   const handleFlipCardClick = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -9,12 +9,14 @@ function FlipCardClickWith3D() {
   return (
     <Card onClick={handleFlipCardClick}>
       <CardContent isCardFlipped={isCardFlipped}>
-        <CardFront>
-          <CardTitle>The Fair</CardTitle>
-          <CardSubtitle>Time for some fun</CardSubtitle>
+        <CardFront isCardFlipped={isCardFlipped}>
+          <CardTitle isCardFlipped={isCardFlipped}>The Fair</CardTitle>
+          <CardSubtitle isCardFlipped={isCardFlipped}>
+            Time for some fun
+          </CardSubtitle>
         </CardFront>
         <CardBack>
-          <CardBody>
+          <CardBody isCardFlipped={isCardFlipped}>
             Welcome to the Fair! A place for the whole family to relax and have
             fun! Enjoy your stay!
           </CardBody>
@@ -33,7 +35,7 @@ const CardContent = styled.div`
   ${({ isCardFlipped }) =>
     isCardFlipped &&
     css`
-      transform: rotateY(0.5turn);
+      transform: rotateY(-0.5turn);
     `}
 `;
 
@@ -65,19 +67,38 @@ const CardFront = styled.div`
     bottom: 1rem;
     left: 1rem;
     border: 3px solid currentColor;
-    transform: translateZ(3rem);
+    transition: transform 6s;
+    transform-style: preserve-3d;
+    ${({ isCardFlipped }) =>
+      isCardFlipped &&
+      css`
+        transform: translateZ(12rem);
+      `}
   }
 `;
 
 const CardTitle = styled.h3`
   font-size: 3.5rem;
-  transform: translateZ(9rem);
+  transition: transform 6s;
+  transform-style: preserve-3d;
+  ${({ isCardFlipped }) =>
+    isCardFlipped &&
+    css`
+      transform: translateZ(36rem);
+    `}
+  /* transform: translateZ(0rem); */
   order: 2;
   text-transform: uppercase;
 `;
 
 const CardSubtitle = styled.p`
-  transform: translateZ(6rem);
+  transition: transform 6s;
+  transform-style: preserve-3d;
+  ${({ isCardFlipped }) =>
+    isCardFlipped &&
+    css`
+      transform: translateZ(24rem);
+    `}
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 0.75rem;
@@ -102,10 +123,16 @@ const CardBack = styled.div`
 `;
 
 const CardBody = styled.p`
-  transform: translateZ(6rem);
+  transition: transform 6s;
+  transform-style: preserve-3d;
+  ${({ isCardFlipped }) =>
+    isCardFlipped &&
+    css`
+      transform: translateZ(24rem);
+    `}
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.6;
 `;
 
-export default FlipCardClickWith3D;
+export default FlipCardClickWithAnimatedText;

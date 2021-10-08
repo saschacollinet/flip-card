@@ -33,7 +33,7 @@ const CardContent = styled.div`
   ${({ isCardFlipped }) =>
     isCardFlipped &&
     css`
-      transform: rotateY(0.5turn);
+      transform: rotateY(-0.5turn);
     `}
 `;
 
