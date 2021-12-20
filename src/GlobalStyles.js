@@ -2,15 +2,18 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 *, *::before, *::after {
-    box-sizing: border-box;
+    box-sizing: inherit;
     margin: 0;
-    font-family: Montserrat, sans-serif;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
 }
 
 body {
     height: 100vh;
-    display: grid;
-    place-items: center;
+    font-family: Montserrat, sans-serif;    
 }
 `;
 

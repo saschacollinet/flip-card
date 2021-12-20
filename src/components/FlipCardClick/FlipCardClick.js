@@ -1,11 +1,13 @@
-import styled, { css } from "styled-components";
+import styled, { css } from "styled-components/macro";
 import { useState } from "react";
 
 function FlipCardClick() {
   const [isCardFlipped, setIsCardFlipped] = useState(false);
+
   const handleFlipCardClick = () => {
     setIsCardFlipped(!isCardFlipped);
   };
+
   return (
     <Card onClick={handleFlipCardClick}>
       <CardContent isCardFlipped={isCardFlipped}>
