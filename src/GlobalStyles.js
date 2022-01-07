@@ -13,7 +13,7 @@ html {
 
 body {
     height: 100vh;
-    font-family: Montserrat, sans-serif;    
+    font-family: 'Montserrat', sans-serif;    
 }
 `;
 

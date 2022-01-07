@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components/macro";
 import { useState } from "react";
 
-function FlipCardClick() {
+export default function FlipCardClick() {
   const [isCardFlipped, setIsCardFlipped] = useState(false);
 
   const handleFlipCardClick = () => {
@@ -109,5 +109,3 @@ const CardBody = styled.p`
   font-size: 1.5rem;
   line-height: 1.6;
 `;
-
-export default FlipCardClick;

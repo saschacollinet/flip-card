@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-function FlipCardHover() {
+export default function FlipCardHover() {
   return (
     <Card>
       <CardContent>
@@ -100,5 +100,3 @@ const CardBody = styled.p`
   font-size: 1.5rem;
   line-height: 1.6;
 `;
-
-export default FlipCardHover;
